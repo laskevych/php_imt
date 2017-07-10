@@ -30,4 +30,4 @@ function BMI ($m, $h) {
         default: echo 'Вы не правильно ввели значения';
     }
 }
-BMI(mt_rand(60, 160),mt_rand(1.2, 2.2));
+BMI(80,1.57);
