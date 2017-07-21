@@ -39,9 +39,6 @@ switch ($hour){
 
 //ЗАДАЧА 2
 //Создайте пример динамического меню для сайта
-
-//Я вроде понял как сделать, но не смог реализовать :(
-
 $leftMenu = array(
     'home'=>'index.php',
     'about'=>'about.php',
@@ -49,12 +46,14 @@ $leftMenu = array(
     'table'=>'table.php',
     'calc'=>'calc.php'
 );
-/* <li><a href='<?= $leftMenu['home']?>'>Домой</a></li>
+?>
+<li><a href='<?= $leftMenu['home']?>'>Домой</a></li>
 <li><a href='<?= $leftMenu['about']?>'>О нас</a></li>
 <li><a href='<?= $leftMenu['contacts']?>'>Контакты</a></li>
-<li><a href='<?= $leftMenu['table']?>'>Список услуг</a></li>
-<li><a href='<?= $leftMenu['calc']?>'>Калькулятор</a></li>    */
+<li><a href='<?= $leftMenu['table']?>'>Таблица</a></li>
+<li><a href='<?= $leftMenu['calc']?>'>Калькулятор</a></li>
 
+<?php
 //ЗАДАЧА 3
 //Выведите фразу «это рабочий день» или «это выходной день;
 $date = mt_rand(1,10);
