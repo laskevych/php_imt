@@ -69,10 +69,68 @@ function getPage($pages,$page_id) {
 function getProduct($products,$id) {
     if($id) {
         return $products[$id];
-        //дальше сами) ретурна не было 5 дней назад
+        //дальше сами) Ретурна не было 5 дней назад
     }
 }
 
-/*Вывод cookie о последнем посещении*/
-//Еще работаю над этим
+/*COOKIES*/
+function getLastTime(){
+  if ($_COOKIE['lasttime']){
+      echo 'Последняя дата посещения сайта:  '.$_COOKIE['lasttime'];
+  }else{
+      setcookie('lasttime',date('d.m.Y H:i'),time()+3600,'/');
+  }
+}
 
+
+/*Футер*/
+function getFooter(){
+    echo 'Это тестовая версия','<br>';
+    echo 'an.laskevych@gmail.com';
+    getLastTime();
+}
+
+
+/*Код Саши. Корзина*/
+if(isset($_GET['amount']) && isset($_GET['id'])) {
+    $cart = array();
+    $product_id = trim(strip_tags($_GET['id']));
+    $amount = trim(strip_tags($_GET['amount']));
+    if(isset($_COOKIE['cart'])) {
+        $cart = unserialize($_COOKIE['cart']);
+    }
+    $cart[$product_id] = $amount;
+    setcookie('cart',serialize($cart),time()+(60*60*24*30),'/');
+    $path = '?r=product&id='.$_GET['id'];
+    header("Location: $path");
+}
+function getCart($products) {
+    $cart_products = array();
+    $total_amount = 0;
+    $total_price = 0;
+    $cart = new stdClass();
+    if(isset($_COOKIE['cart'])) {
+        $ids = unserialize($_COOKIE['cart']);
+        foreach ($ids as $id=>$amount) {
+            $cart_products[$id] = getProduct($products,$id);
+            $cart_products[$id]->amount = $amount;
+            $total_price += $cart_products[$id]->variant->price*$amount;
+            $total_amount += $amount;
+        }
+        $cart->items = $cart_products;
+    }
+    $cart->total_price = $total_price;
+    $cart->total_amount = $total_amount;
+    return $cart;
+}
+
+/*Очистить корнизну*/
+function getClearCart ($cart){
+    if (isset($_COOKIE['cart'])){
+        unset($cart);
+        setcookie('cart', null, time()-3600,'/');
+        return true;
+    }else{
+        return false;
+    }
+}

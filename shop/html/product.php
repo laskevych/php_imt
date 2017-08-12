@@ -20,8 +20,15 @@
                 <?php else:?>
                     <span class="product-price">Цена товара: <?php echo ceil($product->variant->price) ?> грн.</span>
                 <?php endif;?>
+                <div class="button-buy">
+                    <form>
+                        <input type="hidden" name="r" value="<?php echo $_GET['r'] ?>">
+                        <input type="hidden" name="id" value="<?php echo $product->id ?>">
+                        <input type="number" name="amount" value="1" min="1" max="10">
+                        <button type="submit">Купить</button>
+                    </form>
+                </div>
             </div>
-
             <?php if($product->description):?>
                 <h2 class="product-description">Описание товара</h2>
                 <div class="product-info">
@@ -29,7 +36,6 @@
                 </div>
             <?php endif;?>
         </div>
-
     </div>
 
 </div>

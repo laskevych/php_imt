@@ -10,6 +10,9 @@ if(isset($_GET['r'])) {
         case 'pages':
             require_once 'pages.php';
             break;
+        case 'cart':
+            require_once 'cart.php';
+            break;
         default:
             require_once 'products.php';
             break;

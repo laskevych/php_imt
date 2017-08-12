@@ -1,5 +1,6 @@
+<?php //require_once 'html/cookies.php' ?>
 <?php require_once 'html/functions.php' ?>
-<!--Еще не разобрался где подключать куки-->
+<?php $cart = getCart($products) ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,14 +11,17 @@
 <body>
 
 <div class="wrap">
-    <header>
         <div class="menu">
-            <?//php viewMenu($pages) ?>
-        </div>
-    </header>
+            <?php //viewMenu($pages) ?>
+                <div class="basket">
+                    <a href="?r=cart">В корзине</a> <?php echo $cart->total_amount.' товара(ов)' ;?>
+                </div>
+            </div>
     <aside class="container">
         <div>
-            <h2 class="container-h2">Каталог товаров</h2>
+            <div class="container-header">
+                <h2 class="container-h2">Каталог товаров</h2>
+            </div>
             <div class="makeTree">
                 <?php
                 $categories_tree = makeTree($categories);
@@ -32,12 +36,9 @@
             <div> <?php require_once 'html/content.php'?></div>
         </div>
         <footer>
-            <div>
-                <p class="footer-text">Это тестовый интернет магазин.</p>
-                <p class="footer-text">an.laskevych@gmail.com</p>
+            <div class="footer-text">
+                <?php getFooter();?>
             </div>
-
-
         </footer>
 </div>
 </body>
