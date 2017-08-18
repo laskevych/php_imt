@@ -78,7 +78,7 @@ function getLastTime(){
   if ($_COOKIE['lasttime']){
       echo 'Последняя дата посещения сайта:  '.$_COOKIE['lasttime'];
   }else{
-      setcookie('lasttime',date('d.m.Y H:i'),time()+3600,'/');
+      echo 'Вы у нас впервые? Осмотритесь! Тут много крутых вещей!';
   }
 }
 
@@ -87,6 +87,7 @@ function getLastTime(){
 function getFooter(){
     echo 'Это тестовая версия','<br>';
     echo 'an.laskevych@gmail.com';
+    echo '<br>';
     getLastTime();
 }
 

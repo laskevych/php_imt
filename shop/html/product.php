@@ -25,7 +25,7 @@
                         <input type="hidden" name="r" value="<?php echo $_GET['r'] ?>">
                         <input type="hidden" name="id" value="<?php echo $product->id ?>">
                         <input type="number" name="amount" value="1" min="1" max="10">
-                        <button type="submit">Купить</button>
+                        <button type="submit">Добавить в корзину</button>
                     </form>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<?php //require_once 'html/cookies.php' ?>
+<?php setcookie('lasttime',date('d.m.Y H:i'),time()+120,'/');?>
 <?php require_once 'html/functions.php' ?>
 <?php $cart = getCart($products) ?>
 <!DOCTYPE HTML>

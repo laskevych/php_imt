@@ -173,3 +173,15 @@ footer {
     margin-left: 5px;
     margin-right: 5px;
 }
+.sendcart {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 35%;
+    border-radius: 5px;
+    border: solid;
+    border-color: #63a7d5;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
