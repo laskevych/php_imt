@@ -1,0 +1,33 @@
+.new-div {
+    background-color: #f6f181;
+    border-radius: 5px;
+}
+.new-div-2 {
+    background-color: #f69e80;
+    border-radius: 5px;
+}
+.download-info {
+    background-color: #4aaf4e;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.div-img{
+    float: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.div-input{
+    padding-top: 20px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4aaf4e;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
