@@ -1,51 +1,63 @@
 <?php if(!empty($cart->items)) :?>
-    <div class="cart-king">
-        <div class="cart-img">Фото</div>
-        <div class="cart-name">Наименование</div>
-        <div class="cart-price">Цена</div>
-        <div class="cart-amount">Кол-во</div>
-        <div class="cart-sum">Сумма</div>
-        <div class="cart-line"></div>
+    <div class="row col-12" style="text-align: center">
+        <div class="col-3">Фото</div>
+        <div class="col-3">Наименование</div>
+        <div class="col-2">Цена</div>
+        <div class="col-2">Кол-во</div>
+        <div class="col-2">Сумма</div>
+        <div class="col-12" style="background-color: white; margin: 10px 0 10px 0"></div>
     </div>
     <?php foreach ($cart->items as $item) :?>
-        <div class="cart-king">
-            <hr class="cart-line-2">
-            <div class="cart-img">
-                <img src="files/images/product.jpg" width="75px">
+        <div class="row col-12" style="text-align: center">
+            <!--<hr>-->
+            <div class="col-3">
+                <img src="files/images/product.jpg" width="150px">
             </div>
-            <div class="cart-name"><?php echo $item->name?></div>
-            <div class="cart-price"><?php echo $item->variant->price .' грн' ?></div>
-            <div class="cart-amount">
-                <input class="form-control" type="number" value="<?php echo $item->amount?>">
+            <div class="col-3"><?php echo $item->name?></div>
+            <div class="col-2"><?php echo $item->variant->price .' грн' ?></div>
+            <div class="col-2">
+                <input style="width: 60%" type="number" value="<?php echo $item->amount?>">
             </div>
-            <div class="cart-sum">
+            <div class="col-2">
                 <?php echo $item->variant->price*$item->amount .' грн'  ?>
             </div>
-            <div class="cart-line"></div>
+            <div class="col-12" style="background-color: white; margin: 10px 0 10px 0"></div>
         </div>
     <?php endforeach;?>
     <?php //print_r($cart);?>
-    <div class="cart-total-price">
-        <div>Итого: <?php echo $cart->total_price ?> грн.</div>
+    <div class="col-12 row" style="text-align: right; font-size: 20px">
+        <div class="col-4">К оплате: <?php echo $cart->total_price ?> грн.</div>
+        <div class="col-8">
+            <h3>Личная информация</h3>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="exampleName">Имя</label><br>
+                    <input id="exampleName" type="text" name="username" placeholder="Имя">
+                </div>
+                <div class="form-group" style="margin-top: -15px">
+                    <label for="exampleLastName">Фамилия</label><br>
+                    <input id="exampleLastName" type="text" name="userlastname" placeholder="Фамилия">
+                </div>
+                <div class="form-group" style="margin-top: -15px">
+                    <label for="exampleEmail">Email</label><br>
+                    <input id="exampleEmail" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group" style="margin-top: -15px">
+                    <label for="examplePhone">Телефон</label><br>
+                    <input type="tel" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form-group" style="margin-top: -15px">
+                    <label for="exampleAddress">Адрес доставки</label><br>
+                    <input type="text" name="address" placeholder="Адрес доставки">
+                </div>
+                <div class="form-group" style="margin-top: -15px">
+                    <label for="exampleComment">Комментарий к заказу</label><br>
+                    <textarea name="comment" rows="2" placeholder="Комментарий к заказу"></textarea>
+                </div>
+                <input name="button1" type="submit" value="Оформить заказ" class="btn btn-success">
+            </form>
+        </div>
     </div>
-    <div class="sendcart">
-        <form action="action.php" method="post">
-            <?php foreach ($cart->items as $item):?>
-                <input type="hidden" name="productname" value="<?php echo $item->name;?>">
-                <input type="hidden" name="productprice" value="<?php echo $item->variant->price;?>">
-                <input type="hidden" name="productamount" value="<?php echo $item->amount;?>">
-            <?php endforeach;?>
-
-            <input type="text" name="username" placeholder="Имя">
-            <input type="text" name="userlastname" placeholder="Фамилия">
-            <input type="email" name="email" placeholder="Email">
-            <input type="tel" name="phone" placeholder="Телефон">
-            <input type="text" name="address" placeholder="Адрес доставки">
-            <textarea name="comment" rows="2" placeholder="Комментарий к заказу"></textarea>
-            <input name="button1" type="submit" value="Оформить заказ">
-        </form>
-    </div>
-
 <?php else: ?>
     <h3>Корзина пуста</h3>
 <?php endif;?>

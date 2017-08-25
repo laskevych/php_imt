@@ -1,3 +1,4 @@
+/*
 .wrap {
     width: auto;
     margin: auto;
@@ -184,4 +185,158 @@ footer {
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
+}*/
+
+a {
+    text-decoration: none;
 }
+body{
+    background-color: rgb(239, 239, 239);
+}
+/*Меню сайта*/
+.head-info a {
+    text-decoration: none;
+    background-color: #f6731c;
+    color: white;
+    display: block;
+    margin-top: 10px;
+    transition: 0.5s all;
+}
+.head-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.head-info li {
+    /*margin-right: 5px;*/
+}
+.head-info a:hover {
+    border-bottom: solid 1px;
+    border-color: #7eb105;
+}
+.head-info {
+    background-color: #f6731c;
+    border-radius: 5px 0 0 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 15px;
+}
+
+/*Вход/Регистрация*/
+.head-radius-1 {
+    border-radius: 0 0 0 0;
+    padding-bottom: 5px;
+}
+
+/*Корзина*/
+.head-radius-2 {
+    border-radius: 0 5px 5px 0;
+    padding-bottom: 5px;
+}
+
+
+/*Внешний вид категорий*/
+.menu-h2 {
+    background-color: #f6731c;
+    color: white;
+    padding-bottom: 5px;
+    text-align: center;
+
+}
+.menu-tree a {
+    text-decoration: none;
+    background-color: #f6731c;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ff951d;
+    transition: 0.5s all;
+    width: 100%;
+}
+.menu-tree ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-tree a:hover {
+    background: #7eb105;
+    padding: 10px 0 10px 20px;
+}
+
+/*Всплывающие категории*/
+
+/*.menu-tree ol>ol>ol {
+    position: relative;
+    z-index: -99999;
+}
+.menu-tree ol>ol>ol {
+    position: absolute;
+    width: 100%;
+    left: 150%;
+    opacity: 1;
+    z-index: -99999;
+}
+
+.menu-tree ol>ol>ol:hover{
+    opacity: 1;
+    z-index: 99999;
+}
+!*Всплывающие категории 2*!
+.menu-tree ol>ol {
+    position: relative;
+    z-index: -99999;
+}
+.menu-tree ol>ol {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    opacity: 1;
+    z-index: -99999;
+}
+
+.menu-tree ol>ol:hover{
+    opacity: 1;
+    z-index: 99999;
+}*/
+
+/*Товары*/
+.products{
+    margin-top: 30px;
+}
+.products a {
+    text-decoration: none;
+    display: block;
+}
+.product-list:hover {
+    border: 1px solid;
+    border-color: #7eb105;
+    border-radius: 5px;
+}
+.product-list {
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+}
+
+/*Разделитель товаров*/
+
+/*.delimiter {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}*/
+
+
+
+/*Футер +100*/
+.footer-100{
+    margin-bottom: 45px;
+    background: url("//citrus.ua/img/bi/citrus-club-100-footer.png") no-repeat;
+    height: 83px;
+}
+
+
+
+
+
